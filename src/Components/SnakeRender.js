@@ -1,6 +1,8 @@
 import React from 'react';
+import swal from 'sweetalert';
 import Snake from './Snake';
 import Food from './Food';
+import '../assets/app.scss';
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -145,8 +147,14 @@ export default class SnakeRender extends React.Component {
     }
   }
 
-  onGameOver() {
-    alert(`Game Over. Your score is ${this.state.snakeDots.length}`);
+  onGameOver(e) {
+    // alert(`Your score is ${this.state.snakeDots.length - 2}`);
+    swal({
+      title: "Game Over",
+      text: `Your score is ${this.state.snakeDots.length - 2}`,
+      button: "Restart"
+  });
+  
     this.setState({
       food:getRandomCoordinates(),
       direction: 'RIGHT',
@@ -161,14 +169,17 @@ export default class SnakeRender extends React.Component {
   render() {
     return (
       <div className="SnakeRender">
-      
-        <h1>Snake Game</h1>
+        <div className="container">
+        <div className="header">
+          <h1>Snake Game</h1>
+          <h3>Use your keyboard arrows to move the snake.</h3>
+        </div>
         <div className="game-area">
           <Snake snakeDots={this.state.snakeDots} />
           <Food dot={this.state.food} />
         </div>
-  
-        
+        <h2>Score:{this.state.snakeDots.length -2}</h2>
+        </div>
       </div>
     );
 
