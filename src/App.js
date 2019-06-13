@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SnakeRender from './Components/SnakeRender';
 import './assets/app.scss';
 
