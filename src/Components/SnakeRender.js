@@ -19,8 +19,8 @@ export default class SnakeRender extends React.Component {
       direction: 'RIGHT',
       speed: 200,
       snakeDots: [
-        [0,0],
-        [2,0]
+        [2,10],
+        [4,10]
       ]
     }
   }
@@ -28,6 +28,11 @@ export default class SnakeRender extends React.Component {
   componentDidMount() {
     setInterval(this.moveSnake,this.state.speed);
     document.onkeydown = this.onKeyDown;
+  }
+
+  componentDidUpdate() {
+    this.checkIfOutOfBorders();
+    this.checkIfCollides();
   }
 
   onKeyDown = (e) => {
@@ -70,6 +75,37 @@ export default class SnakeRender extends React.Component {
     dots.shift();
     this.setState({
       snakeDots: dots
+    })
+  }
+
+  checkIfOutOfBorders() {
+    let head = this.state.snakeDots[this.state.snakeDots.length -1];
+    if (head[0] >= 100 || head[1] >= 100 || head [0] < 0 || head[1] < 0) {
+      this.onGameOver();
+    }
+  }
+
+  checkIfCollides() {
+    let snake = [...this.state.snakeDots];
+    let head = snake[snake.length -1];
+    snake.pop();
+    snake.forEach(dot => {
+      if (head[0] === dot[0] && head[1] === dot[1]){
+        this.onGameOver();
+      }
+    })
+  }
+
+  onGameOver() {
+    alert(`Game Over. Your score is ${this.state.snakeDots.length}`);
+    this.setState({
+      food:getRandomCoordinates(),
+      direction: 'RIGHT',
+      speed: 200,
+      snakeDots: [
+        [2,10],
+        [4,10]
+      ]
     })
   }
 
