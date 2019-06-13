@@ -1,0 +1,33 @@
+$primary: #f83600;
+$secondary: #f9d423;
+$darkgrey: #333333;
+$lightgrey: #f3f3f3;
+
+
+.App {
+  margin:0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, $primary 0%, $secondary 100%);
+  font-family: "Exo 2","Helvetica", sans-serif;
+
+  h1 {
+    margin:0;
+    font-size: 72px;
+  }
+
+  canvas {
+    background: $darkgrey;
+    border: 3px solid $lightgrey;
+    box-shadow: 4px 4px 12px 4px transparentize($color: $darkgrey, $amount: 0.5) 
+  }
+
+  
+}
+  
+
+
+
+

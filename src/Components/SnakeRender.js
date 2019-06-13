@@ -1,9 +1,16 @@
 import React from 'react';
 
 const SnakeRender = () => {
+
+
   return (
     <div className="SnakeRender">
-      <p>this is where rendering stuff goes</p>
+    <div className="container">
+      <h1>Snake Game</h1>
+      <canvas width="768" height="448"></canvas>
+    </div>
+      
+      
     </div>
   );
 }
