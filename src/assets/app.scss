@@ -36,6 +36,15 @@ $lightgrey: #f3f3f3;
     background-color: $primary;
     border: 1px solid white;
   }
+
+  .snake-food{
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background-color: $secondary;
+    border: 1px solid white;
+    z-index: 1;
+  }
   
 }
   
