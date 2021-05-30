@@ -3,23 +3,22 @@ $secondary: #f9d423;
 $darkgrey: #333333;
 $lightgrey: #f3f3f3;
 
-
 .App {
-  margin:0;
+  margin: 0;
   height: 100vh;
   background: linear-gradient(to right, $primary 0%, $secondary 100%);
   font-family: "Arial", sans-serif;
 
   .header {
     background: #4c0013;
-    color: $lightgrey ;
+    color: $lightgrey;
     margin-bottom: 1.2rem;
     margin-top: -1rem;
     padding: 1.6rem 0 1rem 1rem;
-    box-shadow: 0px 5px 20px rgb(71,71,71);
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
 
     h1 {
-      margin:0;
+      margin: 0;
       font-size: 3.2rem;
     }
 
@@ -28,8 +27,6 @@ $lightgrey: #f3f3f3;
       font-weight: 500;
       margin: 0;
     }
-  
-
   }
   h2 {
     padding-left: 12rem;
@@ -38,13 +35,13 @@ $lightgrey: #f3f3f3;
   .game-area {
     position: relative;
     margin: 20px auto;
-    width: 600px;
-    height: 600px;
+    width: 60vh;
+    height: 60vh;
     border: 3px solid $lightgrey;
     background-color: $darkgrey;
   }
 
-  .snake-dot{
+  .snake-dot {
     position: absolute;
     width: 2%;
     height: 2%;
@@ -53,7 +50,7 @@ $lightgrey: #f3f3f3;
     z-index: 2;
   }
 
-  .snake-food{
+  .snake-food {
     position: absolute;
     width: 2%;
     height: 2%;
@@ -61,16 +58,12 @@ $lightgrey: #f3f3f3;
     border: 1px solid white;
     z-index: 1;
   }
-  
+
   .container {
     max-width: 60rem;
     margin: 0 auto;
     padding: 0 1.6rem;
-    
   }
-
-  
-
 }
 
 .swal-button {
@@ -80,10 +73,8 @@ $lightgrey: #f3f3f3;
   font-size: 12px;
   border: 1px solid $secondary;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-  
 }
 
 .swal-overlay {
   background-color: rgba(76, 0, 19, 1);
 }
-
